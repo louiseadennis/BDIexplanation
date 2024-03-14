@@ -15,8 +15,8 @@ ruleset="""
   0:+hungry,+no_food,+at_home,+need_clothing
  24:+hungry
 """
-p=parse_string(ruleset,timesteps=31)
-# p=parse_file(sys.argv[1])
+# p=parse_string(ruleset,timesteps=31)
+p=parse_file(sys.argv[1])
 
 trace=create_trace(TraceElement(set(),p[0],None,p[1],None,"p"))
 
