@@ -1,0 +1,4 @@
+a_goal -(1)-> -a_goal,+b_goal
+b_goal -(1)-> -b_goal,+g_goal
+g_goal -(1)-> -g_goal,+x,.do_stuff
+4: +a_goal

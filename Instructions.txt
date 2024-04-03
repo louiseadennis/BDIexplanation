@@ -1,0 +1,3 @@
+To run an example
+
+python3 run_agent examples/take_sample.bdi

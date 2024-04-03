@@ -87,11 +87,11 @@ class RulesTransformer(Transformer):
 def event_time_to_event_stack(events,**kwargs):
     """time in event list is 3 times shorter than time here so we include extra Nones to take care of that.
     Alternatively, the timesteps parameter can be used to explicitly set the trace length """
-    timesteps=kwargs.get("timesteps",4+max(events)*3)
+    timesteps=kwargs.get("timesteps",4+max(events))
     event_stack = [None] * timesteps
 
     for i in range(len(event_stack)):
-        if i % 3 == 0 and events.get(i , None) is not None:
+        if events.get(i , None) is not None:
             event_stack[i] = events[i]
 
     return event_stack

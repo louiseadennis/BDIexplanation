@@ -1,3 +1,0 @@
-take_sample_message -> -take_sample_message,+!take_sample
-!take_sample -> -!take_sample,.drill
-3: +take_sample_message

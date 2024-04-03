@@ -9,7 +9,7 @@ ruleset="""
   no_food,at_shops -(1)-> .buy_food,+go_home,+have_food,-no_food
   go_home -(1)-> .drive,-at_shops,+at_home,-go_home
   hungry,have_food,at_home -(1)-> .eat,-hungry,-have_food,+no_food
-
+
   at_shops,need_clothing-(2)->.buy_clothes,-need_clothing
 
   0:+hungry,+no_food,+at_home,+need_clothing

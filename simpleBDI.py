@@ -8,6 +8,7 @@ class TraceElement:
     self.state=state
 
   def __str__(self):
+    print("called")
     return f"""
           beliefs: {list(b for b in self.beliefs)}
           current_plan: {self.current_plan}
@@ -60,10 +61,10 @@ def do_selection(last_trace_element):
   
   new_trace_element=deepcopy(last_trace_element)
   new_trace_element.action=None
-  if len(new_trace_element.event_stack)==0:
-    raise Exception("Unexpected empty stack")
+    #if len(new_trace_element.event_stack)==0:
+      #raise Exception("Unexpected empty stack")
   
-  new_trace_element.event_stack.pop(0) #remove null element as we are not doing perception
+    #new_trace_element.event_stack.pop(0) #remove null element as we are not doing perception
 
   plan=find_applicable_plan(new_trace_element.beliefs,new_trace_element.plans)
   new_trace_element.current_plan=plan
@@ -75,10 +76,10 @@ def do_execution(last_trace_element):
     raise Exception("Incorrect state, expected s got",last_trace_element.state)
   
   new_trace_element=deepcopy(last_trace_element)
-  if len(new_trace_element.event_stack)==0:
-    raise Exception("Unexpected empty stack")
+    #if len(new_trace_element.event_stack)==0:
+     # raise Exception("Unexpected empty stack")
   
-  new_trace_element.event_stack.pop(0) #remove null element as we are not doing perception
+    #new_trace_element.event_stack.pop(0) #remove null element as we are not doing perception
 
   for e in new_trace_element.current_plan.effects:
     e.execute_effect(new_trace_element)
@@ -88,6 +89,7 @@ def do_execution(last_trace_element):
 
 #initial_state should be (set(),plans,None,event_stack,none,"p")
 def create_trace(initial_state):
+  #print(initial_state)
   """Takes in a single TraceElement and then runs the semantics to create a trace. If calling from parse_string, invoke using create_trace(TraceElement(set(),p[0],None,p[1],None,"p")) """
   trace=[initial_state]
   while True:

@@ -5,5 +5,5 @@ at_location, take_sample_goal -(1)-> -take_sample_goal,.drill
 
 
 0:+at_start,+safe_terrain,+take_sample_message
-6:-safe_terrain
+2:-safe_terrain
 

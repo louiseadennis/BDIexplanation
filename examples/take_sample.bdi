@@ -1,0 +1,4 @@
+take_sample_message -(1)-> -take_sample_message,+take_sample_goal
+take_sample_goal -(1)->-take_sample_goal,.drill
+
+0: +take_sample_message
